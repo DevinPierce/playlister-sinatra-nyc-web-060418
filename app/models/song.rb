@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
 
   def slug
     special_characters_removed = self.name.gsub(/[$&+,:;=?@#|'<>.^*()%!]/, '')
-    special_characters_removed.gsub(/[\s]/, '-').downcase
+    added_id = self.id.to_s + special_characters_removed.gsub(/[\s]/, '-').downcase
   end
 
   def self.find_by_slug(slug)
