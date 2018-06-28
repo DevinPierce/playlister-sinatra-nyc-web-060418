@@ -3,7 +3,6 @@ class CreateSongs < ActiveRecord::Migration
     create_table :songs do |t|
       t.string :name
       t.references :artist
-      t.references :genre
     end
   end
 end
