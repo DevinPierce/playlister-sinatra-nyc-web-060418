@@ -7,8 +7,8 @@
 
   <br></br>
 
-  <label for="artist">Artist:</label>
-  <input type="text" id="artist" name="song[artist][name]">
+  <label for="Artist Name">Artist:</label>
+  <input type="text" id="Artist Name" name="song[artist][name]">
   <br>
   <h3>Pick genre(s):</h3>
   <% Genre.all.each do |genre| %>
@@ -17,6 +17,6 @@
   <br>
 <% end %>
 
-<input type="submit" name="submit" value="Add Song">
+<input type="submit" name="submit" value="Create">
 
 </form>
