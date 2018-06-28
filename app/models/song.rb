@@ -8,4 +8,10 @@ class Song < ActiveRecord::Base
     special_characters_removed.gsub(/[\s]/, '-').downcase
   end
 
+  def self.find_by_slug(slug)
+    self.all.find do |song|
+      song.slug == slug
+    end
+  end
+
 end
