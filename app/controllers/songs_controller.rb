@@ -10,14 +10,14 @@ class SongsController < ApplicationController
   end
 
   post '/songs/new' do
-    p params
+
     @artist = Artist.find_or_create_by(name: params[:song][:artist][:name])
+
     @song = Song.create(name: params[:song][:name])
+    params[:genres].each do |genre_id|
+      Genre.find(genre_id.to_i).songs << @song
+    end
     @artist.songs << @song
-
-
-
-
     redirect "/songs/#{@song.slug}"
   end
 
